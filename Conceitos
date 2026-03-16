@@ -1,0 +1,12 @@
+Ele funciona com o Python >= 3.5 ou Python >= 2.7
+Procura sempre o interpretador em /usr/bin/python
+Utiliza a variavel ansible_python_interpreter para configurar o PATH
+Utiliza o SSH para se comunicar com os targets
+Servidores Windows precisamos do WinRM
+
+YAML - YET ANTOHER MARKUP LANGUAGE
+
+São estruturados em formato de mapas ou lista
+  Mapas
+    Com os mapas 
+
