@@ -1,0 +1,25 @@
+
+========== Principais opções =========
+ansible-config list --> Exibe as configurações disponiveis
+ansible-config dump --> Exibe todas as configurações disponiveis, e cruza com as aplicadas no arquivo ansible.cfg
+ansible-config view --> Exibe as configurações dentro do arquivo ansible.cfg
+ansible-config init --> Cria um arquivo de configuração inicial
+
+===== Plugins disponiveis no ansible.cfg
+  - base
+  - become
+  - cache
+  - callback
+  - cliconf
+  - connection
+  - httpapi
+  - inventory
+  - lookup
+  - netconf
+  - shell
+  - vars
+
+  =======================================
+  ansible-config list -f [nome_de_plugin] --> aqui ele vai listar tudo que temos com relação ao plugin pesquisado, tudo que consigo fazer
+
+  
