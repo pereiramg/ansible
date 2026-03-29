@@ -10,9 +10,11 @@ Instalação padrão do Ansible
 	pip install ansible --upgrade
 
 Remoção do ansible
+	
 	pip3 uninstall ansible
 
 Instalação por yum
+	
 	yum install ansible
 	yum install epel-release
 	yum update
