@@ -21,5 +21,8 @@ ansible-config init --> Cria um arquivo de configuração inicial
 
   =======================================
   ansible-config list -f [nome_de_plugin] --> aqui ele vai listar tudo que temos com relação ao plugin pesquisado, tudo que consigo fazer
-
+  -i --> o inventario com a sua lista de servidores
+    all --> Para executar todos que estão dentro do inventario 
+  -u --> Usuário que ele vai executar
+  -k --> Password
   
