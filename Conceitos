@@ -1,3 +1,4 @@
+================== Conceitos =====================
 Ele funciona com o Python >= 3.5 ou Python >= 2.7
 Procura sempre o interpretador em /usr/bin/python
 Utiliza a variavel ansible_python_interpreter para configurar o PATH
@@ -15,12 +16,35 @@ São estruturados em formato de mapas ou lista
     - A sequencia de uma lista inicia com um traço (-) e um espaço
     - É separada da sequencia mãe por um recuo
 
-Principal arquivo de configuração do Ansible
+============== Principal arquivo de configuração do Ansible =================
   Utilize o ansible-config para criar, modificar e ou consultar o arquivo ansible.cfg
   Local padrão -- /etc/ansible/ansible.cfg
 
+=============== ansible.cfg ======================
 ansible.cfg - Ordem de prioridades para encontrar ele
   1 - $ANSIBLE_CONFIG --> Ele vai procurar nessa varial dentro do $PATH
   2 - ./ansible.cfg --> Proximo passo é procurar no diretorio onde ele está sendo executado
   3 - ~/.ansible.cfg --> Ele vai procurar no seu home se ele existe lá
   4 - /etc/ansible/ansible.cfg --> Por ultimo ele vai para o diretorio padrão dele
+
+========== Principais opções =========
+  ansible-config list --> Exibe as configurações disponiveis
+    ansible-config list -f [nome_de_plugin] --> aqui ele vai listar tudo que temos com relação ao plugin pesquisado, tudo que consigo fazer
+  ansible-config dump --> Exibe todas as configurações disponiveis, e cruza com as aplicadas no arquivo ansible.cfg
+  ansible-config view --> Exibe as configurações dentro do arquivo ansible.cfg
+  ansible-config init --> Cria um arquivo de configuração inicial
+
+===== Plugins disponiveis no ansible.cfg
+  - base
+  - become
+  - cache
+  - callback
+  - cliconf
+  - connection
+  - httpapi
+  - inventory
+  - lookup
+  - netconf
+  - shell
+  - vars
+
