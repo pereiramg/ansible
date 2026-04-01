@@ -1,0 +1,20 @@
+ansible-doc -l --> lista todos os modulos disponives
+ansible-doc [modulo] --> Consigo a documentação para saber como usar aquele modulo e exemplos
+
+
+yum
+  "name=nginx state=latest" --> Faz a instalação do nginx na sua ultima versão
+  "state=absent" --> Remove o pacote e suas dependencias
+systemd
+  "name=sshd state=restarted" --> reiniciar o serviço sshd
+
+copy
+  "src=./ansible.cfg dest=/tmp mode=644 owner=galdper" --> copiar o arquivo para o destino
+
+debug
+  "msg={{ 'senha123' | password_hash('sha512', 'mysecretsalt') }}" --> aqui ele vai gerar um hash para a senha passada
+
+user
+  "name=ozzy password='[hash-gerado-acima]'" --> Irá criar o usuário com a senha definida
+  "name=ozzy state=absent" --> remove o usuário
+
