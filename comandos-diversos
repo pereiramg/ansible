@@ -1,28 +1,20 @@
 
-========== Principais opções =========
-ansible-config list --> Exibe as configurações disponiveis
-ansible-config dump --> Exibe todas as configurações disponiveis, e cruza com as aplicadas no arquivo ansible.cfg
-ansible-config view --> Exibe as configurações dentro do arquivo ansible.cfg
-ansible-config init --> Cria um arquivo de configuração inicial
-
-===== Plugins disponiveis no ansible.cfg
-  - base
-  - become
-  - cache
-  - callback
-  - cliconf
-  - connection
-  - httpapi
-  - inventory
-  - lookup
-  - netconf
-  - shell
-  - vars
-
-  =======================================
-  ansible-config list -f [nome_de_plugin] --> aqui ele vai listar tudo que temos com relação ao plugin pesquisado, tudo que consigo fazer
+ansible -i hosts all -u [user] -k -b -K -m [modulo] -a [argumento] -o
   -i --> o inventario com a sua lista de servidores
-    all --> Para executar todos que estão dentro do inventario 
+    all --> Para executar todos que estão dentro do inventario - grupo de hosts
   -u --> Usuário que ele vai executar
-  -k --> Password
-  
+  -k --> senha do usuário
+  -K --> senha de elevação (o K aqui é maisculo, muita atenção)
+  -m --> Ele serve para indicar qual módulo do Ansible você quer executar no host remoto. O módulo é a ação que o Ansible vai executar
+    ansible all -m ping --> usa o módulo ping do Ansible (Esse ping NÃO é ICMP (rede), ele testa: conectividade via SSH / execução remota do Ansible)
+    ansible all -m shell -a "uptime" --> Executa remotamente o uptime
+      -m shell → módulo shell
+      -a → argumentos do módulo
+    ansible all -m command -a "df -h" --> Usar módulo command (mais seguro)
+    ansible all -m yum -a "name=httpd state=present" --> Gerenciar pacotes
+    ansible all -a "ls" --> é o mesmo que ansible all -m command -a "ls", onde posso ser mais objetivo usando apenas o -a
+          Aqui no config do ansible está setado o module_name = command
+  -b --> Realiza a elevação de privilegio (became)
+  -o --> Ele faz com que o resultado do comando seja exibido em uma única linha por host
+ansible all -u [user] -m ping --list-hosts
+  --list-hosts --> lista quais hosts estão sendo executados os comandos
