@@ -1,6 +1,6 @@
 ansible-doc -l --> lista todos os modulos disponives
 ansible-doc [modulo] --> Consigo a documentação para saber como usar aquele modulo e exemplos
-
+ansible-doc setup --> Aqui é o facts e sua descriação
 
 yum
   "name=nginx state=latest" --> Faz a instalação do nginx na sua ultima versão
@@ -18,3 +18,6 @@ user
   "name=ozzy password='[hash-gerado-acima]'" --> Irá criar o usuário com a senha definida
   "name=ozzy state=absent" --> remove o usuário
 
+setup
+  'filter=ansible_default_ipv4' --> traz as informações do ipv4
+  'filter=ansible_architecture' --> a arquitetura do servidor
