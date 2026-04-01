@@ -1,7 +1,7 @@
 
 ansible -i hosts all -u [user] -k -b -K -m [modulo] -a [argumento] -o
   -i --> o inventario com a sua lista de servidores. Obs: Ele aceita colocar mais de um -i para incluir mais de um inventario
-    all --> Para executar todos que estão dentro do inventario - grupo de hosts
+    all --> Para executar todos que estão dentro do inventario - grupo padrão no ansible
   -u --> Usuário que ele vai executar
   -k --> senha do usuário
   -K --> senha de elevação (o K aqui é maisculo, muita atenção)
