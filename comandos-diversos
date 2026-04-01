@@ -18,3 +18,5 @@ ansible -i hosts all -u [user] -k -b -K -m [modulo] -a [argumento] -o
   -o --> Ele faz com que o resultado do comando seja exibido em uma única linha por host
 ansible all -u [user] -m ping --list-hosts
   --list-hosts --> lista quais hosts estão sendo executados os comandos
+
+ansible all -m setup | less --> traz todas as informações de fact dos servidores que estão no inventario
