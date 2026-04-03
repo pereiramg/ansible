@@ -1,16 +1,32 @@
 modelo de invetario completo
 
-[esse modelo utiliza o padrão yaml]
+=============== esse modelo utiliza o padrão yaml ===============
+# Aqui eu preciso declarar o grupo padrão all
+
 all:
   hosts:
-      192.168.1.100:
-      192.168.1.101:
+  children:
+      debian:
+        hosts:
+          192.168.1.100:
+      redhat:
+        hosts:
+          192.168.1.101:
 
 
 
-[]
+=============== O mais utilizado ===============
+# Aqui eu não preciso declarar o grupo padrão all e nem o ungrouped
+# Um grupo normal
+[debian]
 192.168.1.100
 
 [redhat]
 192.168.1.101
+
+# Um grupo chamado linux e possui como filhos 2 grupos. Na chamada só mencionar linux que ele chama todos os filhos
+[linux:children]
+debian
+redhat
+
 
