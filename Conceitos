@@ -48,3 +48,20 @@ ansible.cfg - Ordem de prioridades para encontrar ele
   - shell
   - vars
 
+========= Variaveis ============
+No ansible, podemos definir variaveis fora do inventario, para isso vamos criar duas pastas de nomes reservados pelo Ansible
+Esses pastas devem ficar dentro do projeto
+  group_vars
+  host_vars
+
+Dentro no host_vars, devemos criar um arquivo para cada host que foi definido no inventario. Exemplo:
+  Arquivo --> debian01
+  Conteudo:
+    ansible_port: 22
+    http_port: 8080
+
+Já no group_vars vou criar um arquivo para cada grupo que está no inventario e popular ele com as variaveis
+  Arquivo --> redhat
+  Conteudo:
+    http_port: 8080
+    ansible_ssh_user: root
