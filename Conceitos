@@ -1,4 +1,4 @@
-================== Conceitos =====================
+===================== Conceitos =======================
 Ele funciona com o Python >= 3.5 ou Python >= 2.7
 Procura sempre o interpretador em /usr/bin/python
 Utiliza a variavel ansible_python_interpreter para configurar o PATH
@@ -65,3 +65,17 @@ Já no group_vars vou criar um arquivo para cada grupo que está no inventario e
   Conteudo:
     http_port: 8080
     ansible_ssh_user: root
+
+==== Prioridades nas variaveis ====
+  1 - --extra-vars
+  2 - Pasta host_vars
+  3 - Inventario em Host
+  4 - Pasta group_vars
+  5 - Inventario por Grupo
+  6 - inventario por children
+  7 - all
+
+
+
+
+
