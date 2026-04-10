@@ -39,3 +39,7 @@ become_ask_pass         = False
 scp_if_ssh              = smart
 transfer_method         = smart
 retries                 = 3
+
+[inventory]
+
+enable_plugins          = aws_ec2, host_list, script, auto, yaml, ini, toml  
