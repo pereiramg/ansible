@@ -24,6 +24,7 @@ hostnames:
 #
 compose:
  ansible_host: public_ip_address
+ #ansible_host: private-ip-address
  ansible_user: "'ec2-user'"
 
 #
