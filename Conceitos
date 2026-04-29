@@ -34,6 +34,11 @@ ansible.cfg - Ordem de prioridades para encontrar ele
   ansible-config view --> Exibe as configurações dentro do arquivo ansible.cfg
   ansible-config init --> Cria um arquivo de configuração inicial
 
+  ansible-inventory --> consulta e mostra como o Ansible interpreta o inventário (hosts, grupos e variáveis).
+    --list --> Mostra tudo que existe no inventário, incluindo: Hosts / Grupos / Variáveis (host_vars e group_vars)
+              O resultado sai em JSON, que é o formato interno que o Ansible usa
+    --graph --> Serve para exibir o inventário em forma de árvore (hierarquia de grupos e hosts), de maneira visual e fácil de entender.
+
 ===== Plugins disponiveis no ansible.cfg
   - base
   - become
